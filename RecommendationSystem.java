@@ -20,7 +20,7 @@ public class RecommendationSystem {
 
         UserSimilarity similarity = new PearsonCorrelationSimilarity(model);
 
-        int k = 2; // Number of neighbors
+        int k = 2; 
         UserNeighborhood neighborhood = new NearestNUserNeighborhood(k, similarity, model);
 
         Recommender recommender = new GenericUserBasedRecommender(model, neighborhood, similarity);
