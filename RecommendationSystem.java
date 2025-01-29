@@ -16,24 +16,18 @@ import java.util.List;
 public class RecommendationSystem {
 
     public static void main(String[] args) throws IOException, TasteException {
-        // Load data from a file (replace "ratings.csv" with your actual data file)
-        DataModel model = new FileDataModel(new File("ratings.csv"));
+       DataModel model = new FileDataModel(new File("ratings.csv"));
 
-        // Calculate user similarity using Pearson Correlation
         UserSimilarity similarity = new PearsonCorrelationSimilarity(model);
 
-        // Find the k-nearest neighbors
         int k = 2; // Number of neighbors
         UserNeighborhood neighborhood = new NearestNUserNeighborhood(k, similarity, model);
 
-        // Create a recommender
         Recommender recommender = new GenericUserBasedRecommender(model, neighborhood, similarity);
 
-        // Get recommendations for a specific user (replace 1 with the actual user ID)
         int userId = 1;
         List<RecommendedItem> recommendations = recommender.recommend(userId, 3); // Recommend 3 items
 
-        // Print recommendations
         System.out.println("Recommendations for user " + userId + ":");
         for (RecommendedItem recommendation : recommendations) {
             System.out.println("Item ID: " + recommendation.getItemID() + ", Predicted Rating: " + recommendation.getValue());
