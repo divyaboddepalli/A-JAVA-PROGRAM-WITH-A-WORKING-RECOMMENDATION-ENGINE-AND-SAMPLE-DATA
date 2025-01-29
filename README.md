@@ -13,3 +13,5 @@
 **MENTOR NAME**: NEELA SANTHOSH
 
 **OUTPUT OF THE TASK**:
+
+![Image](https://github.com/user-attachments/assets/2677ec00-8e3c-49ab-98e5-2a1d490a0387)
