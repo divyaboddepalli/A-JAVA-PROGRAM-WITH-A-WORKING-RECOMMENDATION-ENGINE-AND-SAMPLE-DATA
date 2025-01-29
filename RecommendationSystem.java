@@ -26,7 +26,7 @@ public class RecommendationSystem {
         Recommender recommender = new GenericUserBasedRecommender(model, neighborhood, similarity);
 
         int userId = 1;
-        List<RecommendedItem> recommendations = recommender.recommend(userId, 3); // Recommend 3 items
+        List<RecommendedItem> recommendations = recommender.recommend(userId, 3);
 
         System.out.println("Recommendations for user " + userId + ":");
         for (RecommendedItem recommendation : recommendations) {
